@@ -1,4 +1,5 @@
 @use "sass:math";
+@use "sass:color";
 
 @font-face {
     font-family: "Fine dining";
@@ -11,6 +12,7 @@
 }
 
 $theme-colour: rgba(238, 255, 0, 1);
+$theme-colour-2: color.scale(color.complement($theme-colour), $lightness: 50%);
 $footer-colour: rgba(0, 0, 0, 0.5);
 $header-height: 10vh;
 $footer-height: math.div($header-height, 2);
@@ -49,10 +51,29 @@ body {
 header {
     @include box-control(0, 10px);
     @include size(100%, $header-height);
+    @include flex(row, center, space-between);
 
     h1 {
         @include box-control(0);
         font-family: "Stars", "Helvetica Neue", Helvetica, Arial;
+    }
+}
+
+header nav {
+    width: 40%;
+
+    ul {
+        @include flex(row, center, space-around);
+        @include box-control(0);
+        list-style-type: none;
+
+        li:hover {
+            border-bottom: 2px solid $theme-colour;
+        }
+
+        li.current-page {
+            border-bottom: 2px solid $theme-colour-2;
+        }
     }
 }
 
@@ -80,7 +101,7 @@ footer {
         white-space: pre;
 
         &:hover {
-            color: rgb(255, 0, 255)
+            color: $theme-colour-2;
         }
     }
 }

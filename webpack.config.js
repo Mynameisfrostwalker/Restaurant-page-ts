@@ -5,6 +5,8 @@ module.exports = {
     mode: "development",
     entry: {
         index: "./src/scripts/index.ts",
+        pageload: "./src/scripts/pageload.ts", 
+        pubsub: "./src/scripts/pubsub.ts",    
     },
     module: {
         rules: [
@@ -46,6 +48,8 @@ module.exports = {
         clean: true,
     },
     optimization: {
-        runtimeChunk: "single",
+        splitChunks: {
+            chunks: "all",
+        }
     },
 }

@@ -1,4 +1,5 @@
 import "../styles/reset.scss";
 import "../styles/main.scss";
+import { pageLoad } from "./pageload";
 
-console.log("beep");
+pageLoad();
