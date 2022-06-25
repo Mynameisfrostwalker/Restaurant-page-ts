@@ -1,6 +1,6 @@
 import "../styles/reset.scss";
 import "../styles/main.scss";
-import { pageLoad } from "./pageload";
+import { pageLoad , createMain} from "./pageload";
 import { createMenu } from "./menu";
 
 pageLoad();
@@ -14,6 +14,14 @@ const displayTab = (e: Event) => {
             const active = document.querySelector(".current-page");
             active?.classList.remove("current-page");
             createMenu();
+            tab.classList.add("current-page");
+        }
+        if(tab.id === "Home-tab") {
+            const main = document.querySelector("main");
+            const active = document.querySelector(".current-page");
+            active?.classList.remove("current-page");
+            main?.replaceChildren()
+            main?.appendChild(createMain());
             tab.classList.add("current-page");
         }
     }

@@ -56,5 +56,5 @@ const pageLoad = () => {
 
 }
 
-export { pageLoad }
+export { pageLoad, createMain };
 
