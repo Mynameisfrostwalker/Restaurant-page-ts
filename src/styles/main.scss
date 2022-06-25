@@ -17,9 +17,14 @@ $footer-colour: rgba(0, 0, 0, 0.5);
 $header-height: 10vh;
 $footer-height: math.div($header-height, 2);
 
-@mixin size($width, $height) {
-    min-width: $width;
-    min-height: $height;
+@mixin size($width, $height: $width, $img: false) {
+    @if($img == false) {
+        min-width: $width;
+        min-height: $height;
+    } @else {
+        width: $width;
+        height: $height;
+    }
 }
 
 @mixin box-control($margin, $padding: $margin) {
@@ -60,12 +65,17 @@ header {
 }
 
 header nav {
-    width: 40%;
+    @include size(40%, min-content);
 
     ul {
         @include flex(row, center, space-around);
         @include box-control(0);
         list-style-type: none;
+
+        li {
+            cursor: pointer;
+            padding: 10px;
+        }
 
         li:hover {
             border-bottom: 2px solid $theme-colour;
@@ -82,11 +92,34 @@ main {
     @include size(100%, $main-height);
     @include flex(column, center, center);
 
-    >p:first-of-type {
+    &.home p {
         font-family: "Fine dining", 'Times New Roman', Times, serif;
         font-size: calc(30px + 7vw);
         text-align: center;
     }
+
+    &.menu .container {
+        @include box-control(0, 20px);
+
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 200px));
+        width: 40%;
+        justify-content: center;
+        align-items: center;
+        background-color: $footer-colour;
+        font-family: "Fine dining", 'Times New Roman', Times, serif;
+        font-size: calc(20px + 2vw);
+        
+    }
+
+    &.menu section {
+        text-align: center;
+    }
+
+    &.menu img {
+        @include size(calc(20px + 7vw), $img: true);
+    }
+
 }
 
 footer {

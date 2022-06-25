@@ -13,6 +13,7 @@ const createHeader = () => {
         if(i === 0) {
             li.classList.add("current-page");
         }
+        li.id = `${names[i]}-tab`;
         li.textContent = names[i];
         ul.appendChild(li);
     }
@@ -24,6 +25,7 @@ const createHeader = () => {
 
 const createMain = () => {
     const main = document.createElement("main");
+    main.classList.add("home");
     const h2 = document.createElement("h2");
     h2.textContent = "Welcome to our site!";
     main.appendChild(h2);

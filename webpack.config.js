@@ -7,6 +7,8 @@ module.exports = {
         index: "./src/scripts/index.ts",
         pageload: "./src/scripts/pageload.ts", 
         pubsub: "./src/scripts/pubsub.ts",    
+        menu: "./src/scripts/menu.ts",
+        contact: "./src/scripts/contact.ts"
     },
     module: {
         rules: [
