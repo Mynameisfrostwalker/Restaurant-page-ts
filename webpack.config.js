@@ -5,8 +5,7 @@ module.exports = {
     mode: "development",
     entry: {
         index: "./src/scripts/index.ts",
-        pageload: "./src/scripts/pageload.ts", 
-        pubsub: "./src/scripts/pubsub.ts",    
+        pageload: "./src/scripts/pageload.ts",  
         menu: "./src/scripts/menu.ts",
         contact: "./src/scripts/contact.ts"
     },
