@@ -73,8 +73,9 @@ header nav {
         list-style-type: none;
 
         li {
+            @include box-control(0, 10px);
+
             cursor: pointer;
-            padding: 10px;
         }
 
         li:hover {
@@ -91,6 +92,7 @@ main {
     $main-height: 100vh - ($header-height + $footer-height);
     @include size(100%, $main-height);
     @include flex(column, center, center);
+    @include box-control(0, 20px);
 
     &.home p {
         font-family: "Fine dining", 'Times New Roman', Times, serif;
@@ -98,7 +100,7 @@ main {
         text-align: center;
     }
 
-    &.menu .container {
+    &.menu .menu-container {
         @include box-control(0, 20px);
 
         display: grid;
@@ -110,6 +112,12 @@ main {
         font-family: "Fine dining", 'Times New Roman', Times, serif;
         font-size: calc(20px + 2vw);
         
+    }
+
+    &.menu .contact-container {
+        @include box-control(0, 20px);
+
+        background-color: $footer-colour;
     }
 
     &.menu section {

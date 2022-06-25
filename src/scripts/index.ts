@@ -2,6 +2,7 @@ import "../styles/reset.scss";
 import "../styles/main.scss";
 import { pageLoad , createMain} from "./pageload";
 import { createMenu } from "./menu";
+import { createContact } from "./contact";
 
 pageLoad();
 
@@ -22,6 +23,12 @@ const displayTab = (e: Event) => {
             active?.classList.remove("current-page");
             main?.replaceChildren()
             main?.appendChild(createMain());
+            tab.classList.add("current-page");
+        }
+        if(tab.id === "Contact-tab") {
+            const active = document.querySelector(".current-page");
+            active?.classList.remove("current-page");
+            createContact();
             tab.classList.add("current-page");
         }
     }

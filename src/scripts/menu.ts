@@ -37,42 +37,14 @@ class Credits {
     }
 }
 
-/*
-const credits = [
-    {
-        name: "Spaghetti",
-        link: "https://www.flaticon.com/free-icons/pasta", 
-        title: "Pasta icons created by Freepik - Flaticon",
-        source: Spaghetti
-    },
-    {
-        name: "Burger",
-        link: "https://www.flaticon.com/free-icons/burger",
-        title: "Burger icons created by smalllikeart - Flaticon",
-        source: Burger
-    },
-    {
-        name: "Fried rice",
-        link: "https://www.flaticon.com/free-icons/rice",
-        title: "Rice icons created by Freepik - Flaticon",
-        source: Rice
-    },
-    {
-        name: "Chicken",
-        link: "https://www.flaticon.com/free-icons/chicken",
-        title: "Chicken icons created by Freepik - Flaticon",
-        source: Chicken,
-    }
-]
-*/
-
 const createMenu = () => {
     const main = document.querySelector("main");
     main?.classList.remove("home");
-    main?.classList.add("menu")
-    main?.replaceChildren()
+    main?.classList.add("menu");
+    main?.replaceChildren();
+
     const container = document.createElement("div");
-    container.classList.add("container");
+    container.classList.add("menu-container");
 
     const spaghetti = new Credits("Spaghetti", "pasta", "Pasta", Spaghetti);
     const burger = new Credits("Burger", "burger", "Burger", Burger);
